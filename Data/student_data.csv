@@ -1,0 +1,14 @@
+import pandas as pd
+
+# Define the file path
+data_path = "data/student_data.csv"
+
+# Load the dataset into a pandas DataFrame
+df = pd.read_csv(data_path)
+
+# Display the first 5 rows to verify it loaded correctly
+print("Dataset successfully loaded!")
+print(df.head())
+
+# Check the columns and data types
+print(df.info())

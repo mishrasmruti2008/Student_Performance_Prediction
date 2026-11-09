@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiverse Performance Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Animated Multiverse Background -->
+    <div class="space-bg">
+        <div class="stars"></div>
+        <div class="stars-secondary"></div>
+    </div>
+
+    <div class="container">
+        <h2>🚀 Student Performance Predictor</h2>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="hours_studied">⚡ Study Hours (per day):</label>
+                <input type="number" id="hours_studied" step="0.1" min="1" max="10" placeholder="e.g. 6.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="attendance">🎯 Attendance Percentage (%):</label>
+                <input type="number" id="attendance" step="1" min="50" max="100" placeholder="e.g. 90" required>
+            </div>
+
+            <div class="form-group">
+                <label for="previous_scores">📈 Last Exam Score (0-100):</label>
+                <input type="number" id="previous_scores" step="1" min="40" max="100" placeholder="e.g. 85" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sleep_hours">🌙 Sleep Hours (per night):</label>
+                <input type="number" id="sleep_hours" step="0.5" min="4" max="10" placeholder="e.g. 7.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="extracurricular">🎨 Sports & Activities:</label>
+                <select id="extracurricular">
+                    <option value="1">Yes, Active 🌟</option>
+                    <option value="0">No, Focused on Studies 📚</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submit-btn">✨ Calculate Future Score</button>
+        </form>
+
+        <div id="result-box" class="result-card hidden">
+            <h3 id="result-title">Predicted Performance</h3>
+            <p id="score-display">--</p>
+            <p id="category-display"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
